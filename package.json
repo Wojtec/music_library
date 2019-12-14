@@ -1,0 +1,19 @@
+{
+  "name": "music_library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wojtec/Music_Library.git"
+  },
+  "author": "Wojtec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wojtec/Music_Library/issues"
+  },
+  "homepage": "https://github.com/Wojtec/Music_Library#readme"
+}
