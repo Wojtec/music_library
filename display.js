@@ -1,16 +1,16 @@
 class Display{
 
-     constructor(){
+
+  element(element){
     this.answer = [];
 
-}
-  element(atribute){
-        this.answer.push(atribute);
+        this.answer.push(element);
+        console.log(element);
+
         return this.answer;
-        
     }
 
     
 }
-let display = new Display();
+let display = new Display;
 export default display;
