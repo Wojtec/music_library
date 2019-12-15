@@ -1,9 +1,10 @@
 import Song from './song.js';
+import MusicV from './musicV.js';
 import display from './display.js';
 import Artist from './artist.js';
 import Album from './album.js';
 
-function getData(term, entity) {
+ export function getData(term, entity) {
     $.ajax({
         url: "https://itunes.apple.com/search?",
         data: {
@@ -16,10 +17,10 @@ function getData(term, entity) {
             const results = data.results;
             const resultCount = data.resultCount;
             console.log(results);
-
             getInfoSong(results,entity);
             getInfoArtist(results,entity);
             getInfoAlbum(results,entity);
+            getInfoMusicV(results,entity);
         }
     })
 }
@@ -65,5 +66,22 @@ function getInfoAlbum(test,entity){
         })
     }
 }
-
-getData("michael", "album");
+//Function for get information about music video.
+function getInfoMusicV(test,entity){
+    if(entity == 'musicVideo'){
+        test.forEach(function atribute(item){
+            display.element(new MusicV(
+            item.artworkUrl100,
+            item.artistName,
+            item.trackName,
+            item.trackTimeMillis,
+            item.releaseDate,
+            item.primaryGenreName,
+            item.trackPrice,
+            item.trackViewUrl,
+            item.previewUrl
+            ))
+        })
+    }
+}
+ getData("michael", "musicVideo");
