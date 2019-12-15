@@ -5,7 +5,7 @@ class Display{
     this.answer = [];
 
         this.answer.push(element);
-        console.log(element);
+        console.log(this.answer);
 
         return this.answer;
     }

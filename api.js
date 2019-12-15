@@ -1,19 +1,8 @@
-// $.ajax({
-//     url:"https://itunes.apple.com/search?parameterkeyvalue",
-//     data:{term: "jack",entity:"song"},
-//     type:"GET",
-//     dataType: "jsonp",
-//     success: function(data, dataType){
-//             console.log(data);
-//     }
-
-// })
-
 import Song from './song.js';
 import display from './display.js';
+import Artist from './artist.js';
 
-
-export default function control(term, entity) {
+function getData(term, entity) {
     $.ajax({
         url: "https://itunes.apple.com/search?",
         data: {
@@ -24,7 +13,8 @@ export default function control(term, entity) {
         dataType: "jsonp",
         success: function (data) {
             const results = data.results;
-            console.log(results, 'song');
+            const resultCount = data.resultCount;
+
             getInfo(results, entity);
         }
     })
@@ -40,16 +30,25 @@ function getInfo(test, entity) {
             ))
         })
     }
+    if(entity == 'musicArtist'){
+        test.forEach(function atribute(item){
+            display.element(new Artist(
+                item.artistName,
+                item.primaryGenreName,
+                item.artistLinkUrl
+            ))
+
+        })
+    }
 
 
 
 
 
 
-    
 }
 
 
 
 
-control("michael", "song");
+getData("michael", "musicArtist");
