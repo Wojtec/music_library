@@ -1,6 +1,7 @@
 import Song from './song.js';
 import display from './display.js';
 import Artist from './artist.js';
+import Album from './album.js';
 
 function getData(term, entity) {
     $.ajax({
@@ -14,13 +15,16 @@ function getData(term, entity) {
         success: function (data) {
             const results = data.results;
             const resultCount = data.resultCount;
+            console.log(results);
 
-            getInfo(results, entity);
+            getInfoSong(results,entity);
+            getInfoArtist(results,entity);
+            getInfoAlbum(results,entity);
         }
     })
 }
-
-function getInfo(test, entity) {
+// Function for get informations about Song.
+function getInfoSong(test, entity) {
     if (entity == 'song') {
         test.forEach(function atribute(item) {
             display.element(new Song(
@@ -28,8 +32,12 @@ function getInfo(test, entity) {
                 item.trackName,
                 item.releaseDate
             ))
+
         })
     }
+}
+// Function for get informations about Artist.
+function getInfoArtist(test,entity){
     if(entity == 'musicArtist'){
         test.forEach(function atribute(item){
             display.element(new Artist(
@@ -40,15 +48,22 @@ function getInfo(test, entity) {
 
         })
     }
-
-
-
-
-
-
+}
+//Function for get information about Album.
+function getInfoAlbum(test,entity){
+    if(entity == "album"){
+        test.forEach(function atribute(item){
+            display.element(new Album(
+                item.artistName,
+                item.trackCount,
+                item.collectionPrice,
+                item.releaseDate,
+                item.primaryGenreName,
+                item.collectionName,
+                item.artworkUrl100
+            ))
+        })
+    }
 }
 
-
-
-
-getData("michael", "musicArtist");
+getData("michael", "album");
