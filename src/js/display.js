@@ -3,14 +3,14 @@ class Display{
 
   element(element){
     this.answer = [];
-
+    console.log(element.artistName);
         this.answer.push(element);
-        console.log(this.answer);
 
-        return this.answer;
     }
-
     
+
+
 }
+
 let display = new Display;
 export default display;

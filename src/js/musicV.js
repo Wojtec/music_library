@@ -10,7 +10,6 @@ this.primaryGenreName = primaryGenreName;
 this.trackPrice = trackPrice;
 this.trackViewUrl = trackViewUrl;
 this.previewUrl = previewUrl;
-
 }
 }
 export default MusicV;

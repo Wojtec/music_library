@@ -5,7 +5,9 @@ constructor(artistName,primaryGenreName,artistLinkUrl){
     this.primaryGenreName = primaryGenreName;
     this.artistLinkUrl = artistLinkUrl;
 }
-
+    static name(info){
+        
+    }
 }
 
 export default Artist;

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+    <!-- #search -->
+        <section class="search">
+            <div class="container">
+                <div class="row mb-auto p-4 d-flex align-items-center">
+                    <div class="col"><img src="assets/logo.png" alt="">
+                    </div>
+                    <div class="col-lg-8 d-flex align-items-center">
+                        <div class="col-lg-4 ">
+                            <label for="sel1">Select:</label>
+                            <select class="form-control" id="sel1">
+                                <option>Song</option>
+                                <option>Album</option>
+                                <option>Artist</option>
+                                <option>Music Video</option>
+                            </select>
+                        </div>
+                        <div class="form col-lg-4">
+                            <label for="search">Search:</label>
+                            <input type="text" class="form-control" id="search">
+                        </div>
+                        <div class="d-flex align-items-end mt-5"><button id="btn" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+          
+                    
+                </div>
+            </div>
+            <div class="row title">
+                <div class="pt-2 col"><hr></div>
+                <div class="col-auto"><span class="title-text">Music Library</span></div>
+                <div class="pt-2 col"><hr></div>
+            </div>
+
+        </section>
+        
+        <!-- #content -->
+        <section>
+            <div class="container">
+                <div id="display" class="row">
+                    <div class="col-lg-4">Show elements</div>
+                    <div class="form col-lg-2">
+                        <label for="sel2">Country:</label>
+                        <select class="form-control" id="sel2">
+                           <option>--Select--</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="sel3">Explicit Content:</label>
+                        <select class="form-control" id="sel3">
+                           <option>--Yes--</option>
+                           <option>--No--</option>
+                        </select></div>
+                  
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script type="module" src="js/song.js"></script>
+    <script type="module" src="js/artist.js"></script>
+    <script type="module" src="js/musicV.js"></script>
+    <script type="module" src="js/inputs.js"></script>
+    <script type="module" src="js/display.js"></script>
+    <script type="module" src="js/countryAPI.js"></script>
+    <script type="module" src="js/api.js"></script>
+</body>
+
+</html>

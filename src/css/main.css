@@ -1,0 +1,21 @@
+
+hr{
+    background-color: black;
+    
+    
+}
+label{
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+
+}
+.title{
+    margin: 0px;
+    padding: 0px;
+}
+.title-text{
+    font-size: 30px;
+    text-align: center;
+    
+}

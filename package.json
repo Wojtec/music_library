@@ -2,7 +2,7 @@
   "name": "music_library",
   "version": "1.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/Wojtec/Music_Library.git"
   },
-  "author": "Wojtec",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wojtec/Music_Library/issues"
   },
-  "homepage": "https://github.com/Wojtec/Music_Library#readme"
+  "homepage": "https://github.com/Wojtec/Music_Library#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.3"
+  }
 }

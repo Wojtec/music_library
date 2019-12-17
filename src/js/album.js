@@ -10,7 +10,9 @@ constructor(artistName,trackCount,collectionPrice,releaseDate,primaryGenreName,c
     this.artworkUrl100 = artworkUrl100;
 }
 
-
+static name(info){
+    console.log(info);
+}
 }
 
 export default Album;
