@@ -12,9 +12,6 @@
 
 }
 
-Song.prototype.name = function () {
-    console.log(this.artistName);
-}
 
 
 

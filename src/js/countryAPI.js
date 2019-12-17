@@ -1,4 +1,4 @@
- 
+ import Country from './country.js';
  export default function getCountry() {
  $.ajax({
     "async": true,
@@ -12,35 +12,29 @@
      type: "GET",
       dataType: "json",
      success: function (data) {
-        const results = data;
-        getCountryName(results);
+        getCountryName(data);
     }
  })
  }
-class Country {
-    constructor(name,nameIso){
-        this.name = name;
-        this.nameIso = nameIso;
-    }
-}
-function getCountryName(name) {
+
+export function getCountryName(name){
     name.forEach(function name(item) {
         const country = new Country(item.name,item.alpha2Code);
         let arrayCountry = [];
         arrayCountry.push(country);
         pushName(arrayCountry);
-        getIso(arrayCountry);
+
     })
     
 }
-export function getIso(item,country){
-console.log(country);
 
-}
+
 function pushName(name) {
     name.forEach(function push(item) {
        let ele = $("<option></option>").text(item.name);
         $("#sel2").append(ele);
+         $(ele).val(item.nameIso);
+
     })
     
 }

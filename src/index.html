@@ -23,14 +23,14 @@
                     <div class="col-lg-8 d-flex align-items-center">
                         <div class="col-lg-4 ">
                             <label for="sel1">Select:</label>
-                            <select class="form-control" id="sel1">
+                            <select class="custom-select" id="sel1">
                                 <option>Song</option>
                                 <option>Album</option>
                                 <option>Artist</option>
                                 <option>Music Video</option>
                             </select>
                         </div>
-                        <div class="form col-lg-4">
+                        <div id="test"class="form col-lg-4">
                             <label for="search">Search:</label>
                             <input type="text" class="form-control" id="search">
                         </div>
@@ -52,19 +52,24 @@
         <!-- #content -->
         <section>
             <div class="container">
-                <div id="display" class="row">
-                    <div class="col-lg-4">Show elements</div>
-                    <div class="form col-lg-2">
+                <div id="display" class="row justify-content-center">
+                    <div class="col-auto"><label for="range">Range:</label>
+                        <input type="range" id="range" class="form-control-range" min="1" value="25" max="200" />
+                        <span id="range0">25</span>
+                        <span class="float-right"id="range1">200</span>
+                      </div>
+                    <div class="form col-lg-5">
                         <label for="sel2">Country:</label>
-                        <select class="form-control" id="sel2">
+                        <select class="custom-select" id="sel2">
                            <option>--Select--</option>
                         </select>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-auto">
                         <label for="sel3">Explicit Content:</label>
-                        <select class="form-control" id="sel3">
-                           <option>--Yes--</option>
-                           <option>--No--</option>
+                        <select class="custom-select" id="sel3">
+                            <option>--Select--</option>
+                           <option>Yes</option>
+                           <option>No</option>
                         </select></div>
                   
                 </div>
@@ -72,7 +77,9 @@
 
 
         </section>
-
+        
+        <div id="range"></div>
+        
 
 
 
@@ -88,8 +95,12 @@
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
@@ -98,6 +109,7 @@
     <script type="module" src="js/musicV.js"></script>
     <script type="module" src="js/inputs.js"></script>
     <script type="module" src="js/display.js"></script>
+    <script type="module" src="js/country.js"></script>
     <script type="module" src="js/countryAPI.js"></script>
     <script type="module" src="js/api.js"></script>
 </body>
