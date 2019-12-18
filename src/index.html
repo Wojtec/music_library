@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mymain.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 
 <body>
     <main>
     <!-- #search -->
-        <section class="search">
+        <section class="nav-search">
             <div class="container">
                 <div class="row mb-auto p-4 d-flex align-items-center">
                     <div class="col"><img src="assets/logo.png" alt="">
@@ -49,8 +50,8 @@
 
         </section>
         
-        <!-- #content -->
-        <section>
+        <!-- #filter -->
+        <section class="filter">
             <div class="container">
                 <div id="display" class="row justify-content-center">
                     <div class="col-auto"><label for="range">Range:</label>
@@ -74,12 +75,21 @@
                   
                 </div>
             </div>
-
-
         </section>
-        
-        <div id="range"></div>
-        
+        <!-- #Content-->
+    <section  class="content">
+        <div class="container-fluid">
+            <div class="row rowCard ">
+                <div id="conCard" class="col-lg-10 d-flex flex-wrap justify-content-center">
+    
+                </div>
+                <div style="background-color: green;"  class="col-lg-2 favorit"></div>
+            </div>
+        </div>
+      
+
+
+    </section>        
 
 
 
