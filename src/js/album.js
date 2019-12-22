@@ -1,5 +1,4 @@
 class Album{
-
 constructor(artistName,trackCount,collectionPrice,releaseDate,primaryGenreName,collectionName,artworkUrl100){
     this.artistName = artistName;
     this.trackCount = trackCount;
@@ -9,10 +8,5 @@ constructor(artistName,trackCount,collectionPrice,releaseDate,primaryGenreName,c
     this.primaryGenreName = primaryGenreName;
     this.artworkUrl100 = artworkUrl100;
 }
-
-static name(info){
-    console.log(info);
 }
-}
-
 export default Album;

@@ -17,7 +17,7 @@
  })
  }
 
-export function getCountryName(name){
+function getCountryName(name){
     name.forEach(function name(item) {
         const country = new Country(item.name,item.alpha2Code);
         let arrayCountry = [];

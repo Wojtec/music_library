@@ -10,32 +10,34 @@ $('document').ready(function (){
     let country = null;
     let explicit = null;
     let range = null;
-    // console.log(localStorage.length);
+    // Display elements when html is done
     getData("michael", "song", country, explicit, 25);
-
     getCountry();
+
+    // LIMIT RANGE
     $("#range").change(function () {
         $("#range0").html(this.value);
-        setTimeout(function(){
+        
             $("#conCard").html("");
-        },1);
+        
         getData(textValu,selectValu, country,explicit,this.value);
     });
+    // COUNTRY SELECTOR
     $("#sel2").change(function () {
         $("#conCard").html("");
 
         getData(textValu,selectValu,this.value,explicit,range);
 
     });
+    // EXPLICIT SELECTOR
     $("#sel3").change(function () {
         $("#conCard").html("");
 
         getData(textValu,selectValu,country,this.value,range);
-        console.log(this.value);
 
     });
     
-
+// SEARCH BUTTON
     $("#btn").click(function () {
         $("#conCard").html("");
         selectValu = $("#sel1").val().toLowerCase();
@@ -98,7 +100,6 @@ function getData(term, entity, country, explicit, range) {
         success: function (data) {
             const results = data.results;
             const resultCount = data.resultCount;
-            console.log(data);
             getInfoSong(results, entity);
             getInfoArtist(results, entity);
             getInfoAlbum(results, entity);
@@ -116,7 +117,6 @@ function getInfoSong(test, entity) {
                 item.trackName,
                 item.releaseDate,
                 item.artworkUrl100, );
-            //console.log(song.artworkUrl100);
             display.element(song,entity); 
         })
         

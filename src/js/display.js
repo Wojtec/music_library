@@ -1,10 +1,7 @@
 let i=0;
 
 class Display{
-
-
   element(element,entity){
-    //console.log(entity);
      if(entity == 'song'){
        songCard(element,entity);
      }
@@ -17,32 +14,29 @@ class Display{
     if(entity == 'musicVideo'){
       videoCard(element,entity);
     }
-
     }
-   
-
-
 }       
-
+//################## BUTTON FAVORITE CLICK ############ 
     $(document).on('click',".btn-fav",function(){
       let t = $(this).attr('t');
       let entity = $(this).attr('entity');
+      // IF ENTITY IS SONG
       if(entity == 'song'){
         let items = {
           title : $(this).siblings().find(".card-title").html(),
           track : $(this).siblings().find(".card-text").html(),
           date : $(this).siblings().find(".card-date").html(),
         }
-        let we = ("items"+t)
+        //NUMBER OF COUNTER i
+        let we = ("items"+t);
+        //LOCALSOTORAGE
         localStorage.setItem(we,JSON.stringify(items));
-       
+        //GET LOCALSTORAGE
         let ite = JSON.parse(localStorage.getItem(we));
-      
-
-       setItem(ite,t,entity);
-
+        //CALLBACK
+        setItem(ite,t,entity);
       }
-         
+         // IF ENTITY IS ALBUM
       if(entity == 'album'){
         let items = {
           title : $(this).siblings().find(".card-title").html(),
@@ -51,31 +45,32 @@ class Display{
           type : $(this).siblings().find(".card-type").html(),
           numTrack : $(this).siblings().find(".num-track").html(),
         }
-          let we = ("items"+t)
+         //NUMBER OF COUNTER i
+          let we = ("items"+t);
+        //LOCALSOTORAGE
           localStorage.setItem(we,JSON.stringify(items));
-         
+         //GET LOCALSTORAGE
           let ite = JSON.parse(localStorage.getItem(we));
-        
-  
+         //CALLBACK  
          setItem(ite,t,entity);
          }
-     
-
+         // IF ENTITY IS musicArtist
          if(entity == 'musicArtist'){
           let items = {
             title : $(this).siblings().find(".card-title").html(),
             type : $(this).siblings().find(".card-type").html(),
             url : $(this).siblings().find(".url").html(),
           }
-            let we = ("items"+t)
+          //NUMBER OF COUNTER i
+            let we = ("items"+t);
+            //LOCALSOTORAGE
             localStorage.setItem(we,JSON.stringify(items));
-           
+           //GET LOCALSTORAGE
             let ite = JSON.parse(localStorage.getItem(we));
-          
-        
+          //CALLBACK 
            setItem(ite,t,entity);
            }
-
+           // IF ENTITY IS musicVideo
            if(entity == 'musicVideo'){
             let items = {
               title : $(this).siblings().find(".card-title").html(),
@@ -84,18 +79,16 @@ class Display{
               type : $(this).siblings().find(".card-type").html(),
               url : $(this).siblings().find(".card-url").html(),
               date : $(this).siblings().find(".card-date").html(),
-          
-          
             }
+            //NUMBER OF COUNTER i
               let we = ("items"+t)
+              //LOCALSOTORAGE
               localStorage.setItem(we,JSON.stringify(items));
-             
+             //GET LOCALSTORAGE
               let ite = JSON.parse(localStorage.getItem(we));
-            
-          
+            //CALLBACK
              setItem(ite,t,entity);
              }
-
      });
   
   
@@ -103,7 +96,7 @@ class Display{
 
     
     
- 
+ // FUNCTION SETITEM IS FOR DISPLAY DYNAMIC CONTENT OF FAVORITES
         function setItem(items,t,entity){
           if(entity == 'song'){
             let div = $("<div>",{id:"favDiv"+t,class:"card d-flex justify-content-center m-2 sticky-top",style:"width:300px"});
@@ -124,7 +117,6 @@ class Display{
               $(ul).append(date);
              }
             }
-
             if(entity == 'album'){
               let div = $("<div>",{id:"favDiv"+t,class:"card d-flex justify-content-center m-2 sticky-top",style:"width:300px"});
               let ul = $("<ul>",{id:"favUl",class:"list-group list-group-flush d-flex justify-content-center m-0 p-0",style:"min-height:150px"});
@@ -167,8 +159,6 @@ class Display{
                   $(ul).append(url);
                  }
                 }
-            
-
                 if(entity == 'musicVideo'){
                   let div = $("<div>",{id:"favDiv"+t,class:"card d-flex justify-content-center m-2 sticky-top",style:"width:300px"});
                   let ul = $("<ul>",{id:"favUl",class:"list-group list-group-flush d-flex justify-content-center m-0 p-0",style:"min-height:150px"});
@@ -199,7 +189,6 @@ class Display{
 
         $(document).on("click",".close",function(){
           let i = $(this).attr("i");
-          console.log(i);
           $("#favDiv"+i).remove();
         })
 
