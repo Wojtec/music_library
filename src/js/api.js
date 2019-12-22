@@ -4,26 +4,40 @@ import display from './display.js';
 import Artist from './artist.js';
 import Album from './album.js';
 import getCountry from './countryAPI.js';
-
-$('document').ready(function () {
+$('document').ready(function (){
     let selectValu = null;
     let textValu = null;
     let country = null;
     let explicit = null;
     let range = null;
+    // console.log(localStorage.length);
+    getData("michael", "song", country, explicit, 25);
+
     getCountry();
     $("#range").change(function () {
-         $("#range0").html(this.value);
-        getData(textValu, selectValu, country, explicit,this.value);
-        $("#conCard").html("");
+        $("#range0").html(this.value);
+        setTimeout(function(){
+            $("#conCard").html("");
+        },1);
+        getData(textValu,selectValu, country,explicit,this.value);
     });
-    $("#sel2").on('check', function () {
-        getData();
+    $("#sel2").change(function () {
+        $("#conCard").html("");
 
-    })
+        getData(textValu,selectValu,this.value,explicit,range);
 
+    });
+    $("#sel3").change(function () {
+        $("#conCard").html("");
+
+        getData(textValu,selectValu,country,this.value,range);
+        console.log(this.value);
+
+    });
+    
 
     $("#btn").click(function () {
+        $("#conCard").html("");
         selectValu = $("#sel1").val().toLowerCase();
         textValu = $("#search").val().toLowerCase();
         country = $("#sel2").val();
@@ -34,19 +48,16 @@ $('document').ready(function () {
         // validation
         let val = $("#search").val();
         if (val.length == 0) {
-
             $("#search").addClass('invalid');
         } else {
             $("#search").removeClass('invalid');
-
         }
 
+       
 
-        if (explicit == '--Yes--') {
+
+        if (explicit == '--Select--') {
             explicit = 'Yes';
-        }
-        if (explicit == '--No--') {
-            explicit = 'No';
         }
         if (country == '--Select--') {
             country = 'PL';
@@ -64,12 +75,14 @@ $('document').ready(function () {
             selectValu = 'musicVideo';
         }
         getData(textValu, selectValu, country, explicit, range);
-
+        $("#search").val("");
     })
+
+  
+    
 })
 
-
-
+    
 function getData(term, entity, country, explicit, range) {
     $.ajax({
         url: "https://itunes.apple.com/search?",
@@ -93,8 +106,10 @@ function getData(term, entity, country, explicit, range) {
         }
     })
 };
+
 // Function for get informations about Song.
 function getInfoSong(test, entity) {
+
     if (entity == 'song') {
         test.forEach(function atribute(item) {
             const song = new Song(item.artistName,
@@ -102,9 +117,11 @@ function getInfoSong(test, entity) {
                 item.releaseDate,
                 item.artworkUrl100, );
             //console.log(song.artworkUrl100);
-            display.element(song, entity);
+            display.element(song,entity); 
         })
-    }
+        
+    }   
+  
 }
 
 // Function for get informations about Artist.

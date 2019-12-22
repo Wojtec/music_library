@@ -1,5 +1,11 @@
 
-
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.rowCard{
+    min-width: 100%;
+}
 label{
     font-size: 20px;
     margin: 5px;
