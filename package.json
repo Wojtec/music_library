@@ -22,6 +22,6 @@
     "popper": "^1.0.1"
   },
   "devDependencies": {
-    "webpack": "^4.41.3"
+    "webpack": "^5.75.0"
   }
 }
